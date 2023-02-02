@@ -8,8 +8,63 @@
 }
 
 .js___rotVerloren {
-  background-color: red;
-  transform: 1s ease-in-out;
+  background-color: rgb(239, 239, 239);
+  -webkit-animation: verloren 1s ease-in-out;
+          animation: verloren 1s ease-in-out;
+}
+@-webkit-keyframes verloren {
+  from {
+    background-color: red;
+  }
+  50% {
+    background-color: rgba(255, 0, 0, 0.494);
+  }
+  to {
+    background-color: red;
+  }
+}
+@keyframes verloren {
+  from {
+    background-color: red;
+  }
+  50% {
+    background-color: rgba(255, 0, 0, 0.494);
+  }
+  to {
+    background-color: red;
+  }
+}
+
+.js___gruenGewonnen {
+  background-color: rgb(239, 239, 239);
+  -webkit-animation: gewonnen 1s ease-in-out;
+          animation: gewonnen 1s ease-in-out;
+}
+@-webkit-keyframes gewonnen {
+  from {
+    background-color: green;
+  }
+  50% {
+    background-color: rgba(0, 128, 0, 0.616);
+  }
+  to {
+    background-color: green;
+  }
+}
+@keyframes gewonnen {
+  from {
+    background-color: green;
+  }
+  50% {
+    background-color: rgba(0, 128, 0, 0.616);
+  }
+  to {
+    background-color: green;
+  }
+}
+
+.js___neutralDefault {
+  background-color: rgb(239, 239, 239);
 }
 
 h1 {

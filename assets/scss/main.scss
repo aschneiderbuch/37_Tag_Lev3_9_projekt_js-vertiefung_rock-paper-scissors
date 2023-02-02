@@ -1,28 +1,65 @@
-.js___ausblenden{
+.js___ausblenden {
     display: none;
 }
-.js___einblenden{
+
+.js___einblenden {
     display: flex;
 }
 
-.js___rotVerloren{
-    background-color: red;
-    transform: 1s ease-in-out ;
+.js___rotVerloren {
+    background-color: rgb(239,239,239);
+    animation: verloren 1s ease-in-out;
+
+    @keyframes verloren {
+        from {
+            background-color: red;
+        }
+
+        50% {
+            background-color: rgba(255, 0, 0, 0.494);
+        }
+
+        to {
+            background-color: red;
+        }
+    }
 }
 
+.js___gruenGewonnen {
+    background-color: rgb(239,239,239);
+    animation: gewonnen 1s ease-in-out;
 
-h1{
+    @keyframes gewonnen {
+        from {
+            background-color: green;
+        }
+
+        50% {
+            background-color: rgba(0, 128, 0, 0.616);
+        }
+
+        to {
+            background-color: green;
+        }
+    }
+}
+
+.js___neutralDefault{
+    background-color: rgb(239,239,239);
+}
+
+h1 {
     color: green;
 }
 
-.wuerfelErgebnis{
+.wuerfelErgebnis {
     display: flex;
 
-    p{
+    p {
         display: flex;
         justify-content: space-around;
     }
-    
+
 }
 
 /* 
