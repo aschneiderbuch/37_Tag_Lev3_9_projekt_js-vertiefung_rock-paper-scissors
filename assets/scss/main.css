@@ -1,3 +1,11 @@
 h1 {
   color: green;
+}
+
+.wuerfelErgebnis {
+  display: flex;
+}
+.wuerfelErgebnis p {
+  display: flex;
+  justify-content: space-around;
 }/*# sourceMappingURL=main.css.map */

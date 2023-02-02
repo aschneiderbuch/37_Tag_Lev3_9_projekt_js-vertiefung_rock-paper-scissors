@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,10 +11,66 @@
         sass --watch assets/scss/main.scss assets/css/style.css
      -->
 </head>
+
 <body>
-    <h1>test</h1>
+
+    <h1>Rock Paper Scissors</h1>
+
+    <form action="">
+
+
+        <!-- ************* Spiel Runden ************ -->
+        <section>
+            <h2>how many rounds?</h2>
+            <!-- ******** Ausblenden / ************ -->
+            <section class="ausblenden">
+                <article>
+                    <input type="radio" name="rundenZahl" id="rundenZahl_05" value="5">
+                    <label for="rundenZahl5">5</label>
+
+                    <input type="radio" name="rundenZahl" id="rundenZahl_10" value="10">
+                    <label for="rundenZahl10">10</label>
+                </article>
+                <article>
+                    <input type="radio" name="rundenZahl" id="rundenZahl_15" value="15">
+                    <label for="rundenZahl15">15</label>
+
+                    <input type="radio" name="rundenZahl" id="rundenZahl_20" value="20">
+                    <label for="rundenZahl20">20</label>
+                </article>
+            </section>
+
+            <!-- ************ Einblenden / ********* -->
+            <section class="einblenden">
+                <h3 id="rundenZahl_Text">0 / 0 </h3>
+            </section>
+        </section>
+
+        <!-- ************* Spiel Stand ************* -->
+        <section class="wuerfelErgebnis">
+            <p>USER</p>
+
+            <p>
+            <h4 id="wuerfelErgebnisUser"> 0 </h4> : <h4 id="wuerfelErgebnisComp">0</h4>
+            </p>
+            <p>COMP</p>
+        </section>
+
+        <!-- *********** Spiel Stand Text ********* -->
+        <p id="wuerfeErgebnis_Text">Let`s play</p>
+
+        <!-- ************ Auswahl Buttons ********** -->
+<section>
+    <input id="button_0" type="button" value="0" placeholder="0">
+    <input id="button_1" type="button" value="1" placeholder="0">
+    <input id="button_2" type="button" value="2" placeholder="2">
+</section>
+
+
+    </form>
 
 
     <script src="./assets/js/main.js"></script>
 </body>
+
 </html>
