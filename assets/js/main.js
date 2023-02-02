@@ -25,3 +25,21 @@ let button_2 = document.querySelector("#button_2");
 
 let button_reset = document.querySelector("#button_reset");
 // reset = Seite neu laden    oder   alle Variablen auf 0
+
+
+
+// EventListener
+radio_rundenZahl_05.addEventListener("change", rundenVergleich);
+radio_rundenZahl_10.addEventListener("change", rundenVergleich);
+radio_rundenZahl_15.addEventListener("change", rundenVergleich);
+radio_rundenZahl_20.addEventListener("change", rundenVergleich);
+
+button_0.addEventListener("click", wuerfelnVergleich);
+button_1.addEventListener("click", wuerfelnVergleich);
+button_2.addEventListener("click", wuerfelnVergleich);
+
+button_reset.addEventListener("click", reseteAlleVariablen);
+
+
+
+// 
