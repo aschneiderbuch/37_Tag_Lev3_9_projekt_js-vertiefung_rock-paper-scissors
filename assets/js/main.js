@@ -12,16 +12,16 @@ let radio_rundenZahl_15 = document.querySelector("#radio_rundenZahl_15");
 let radio_rundenZahl_20 = document.querySelector("#radio_rundenZahl_20");
 
 let rundenZahl_Ist___text = document.querySelector("#rundenZahl_Ist");
-rundenZahl_Ist = 0;
+let rundenZahl_Ist = 0;
 // 0 / 0
 let rundenZahl_Soll___text = document.querySelector("#rundenZahl_Soll");
-rundenZahl_Soll = 0; 
+let rundenZahl_Soll = 0;
 
 
-let wuerfelErgebnisUser = document.querySelector("#wuerfelErgebnisUser");
-wuerfelErgebnisUser = 0;
-let wuerfelErgebnisComp = document.querySelector("#wuerfelErgebnisComp");
-wuerfelErgebnisComp = 0;
+let wuerfelErgebnisUser___text = document.querySelector("#wuerfelErgebnisUser");
+let wuerfelErgebnisUser = 0;
+let wuerfelErgebnisComp___text = document.querySelector("#wuerfelErgebnisComp");
+let wuerfelErgebnisComp = 0;
 let wuerfeErgebnis_Text = document.querySelector("#wuerfeErgebnis_Text");
 
 let button_0 = document.querySelector("#button_0");
@@ -60,7 +60,7 @@ function rundenVergleich(event) {
         const zahl5 = Number(radio_rundenZahl_05.value); // Zahl 5
         rundenZahl_Soll = zahl5;
         rundenZahl_Soll___text.innerHTML = zahl5;
-            
+
     }
     else if (radio_rundenZahl_10.checked) {
         ausblenden.style.display = "none";
@@ -91,26 +91,93 @@ function rundenVergleich(event) {
 
 // Funktion    wuerfelnVergleich
 function wuerfelnVergleich_0() {
-    console.log("wuerfel geht in function wuerfelnVergleich");
+    if (rundenZahl_Ist < rundenZahl_Soll) {
 
-    let zufallszahl_pc = Math.round((Math.random()*3));
-    console.log(zufallszahl_pc);  // pc = zufall 0 - 2 
-     
-    zahl_user = Number(button_0.value);   // !!! Button umstellen  0 = Zahl 
-console.log(zahl_user);
+        // Zufalszahl für PC zwischen 0 und 2 erstellen
+        let zufallszahl_pc = Math.round((Math.random() * (2-0)+0));
+        console.log(zufallszahl_pc);  // pc = zufall 0 - 2 
 
-if (zufallszahl_pc == zahl_user == Number(button_0.value)) {
-    const zahlNull = 0; // !!! Button umstellen  0 = Zahl
-    console.log("zufallszahl gleich")
-    wuerfelErgebnisUser += zahlNull; // z.B. 0 + 0 
-    console.log(wuerfelErgebnisUser);
-    wuerfelErgebnisComp += zahlNull; // z.B. 0 + 0
-    console.log(wuerfelErgebnisComp);
-    wuerfeErgebnis_Text.innerHTML = `Unentschieden Zufallszahl ist gleich`
+        // User Zahl über den Button holen
+        zahl_user = Number(button_0.value);             // !!! Button umstellen  0 = Zahl 
+
+/* 
+0 = Stein
+1 = Papier
+2 = Schere
+      
+       = Gewinner
+                     0 : 0  = Unentschieden
+0 : 1 = 1 Papier
+0 : 2 = 0 Stein
+1 : 0 = 1 Papier
+1 : 2 = 2 Schere
+                     1 : 1 = Unentschieden
+2 : 0 = 0 Stein
+2 : 1 = 2 Schere
+                     2 : 2 = Unentschieden
+
+ */
+
+        // If Vergleich,     = Ausgabe = verschiedene Erhöhungen
+        // Unentschieden
+        if (zufallszahl_pc === zahl_user ) {    
+            const zahlNull = 0;                       // !!!   0 = Zahl
+            console.log("zufallszahl gleich")
+
+            // User Ergebnis wird weiter gezählt und erhöht
+            wuerfelErgebnisUser += zahlNull; // z.B. 0 + 0 
+            wuerfelErgebnisUser___text.innerHTML = wuerfelErgebnisUser;
+
+            // PC Ergebnis wird weiter gezählt und erhöht
+            wuerfelErgebnisComp += zahlNull; // z.B. 0 + 0
+            wuerfelErgebnisComp___text.innerHTML = wuerfelErgebnisComp;
+
+            wuerfeErgebnis_Text.innerHTML = `Unentschieden Zufallszahl ist gleich`
+
+            // Runde wird um 1 erhöht
+            rundenZahl_Ist += 1;
+            rundenZahl_Ist___text.innerHTML = rundenZahl_Ist;
+
+
+            // Gewinner hier: 1  Papier //     0 = Stein 1 = Papier 2 = Schere     
+        } else if (zufallszahl_pc===1 &&  zahl_user===0) {    
+            const zahlNull = 1;                       // !!! 1 = Zahl
+
+            if (zahl_user == 1){
+            // User Ergebnis wird weiter gezählt und erhöht
+            wuerfelErgebnisUser += zahlNull; // z.B. 0 + 0 
+            wuerfelErgebnisUser___text.innerHTML = wuerfelErgebnisUser;
+            //  ??? Farben ??      
+            // !!! Button ändern
+            button_0.style.backgroundColor = "green";
+            
+            wuerfeErgebnis_Text.innerHTML = `User Gewinnt`
+
+            }
+            else if (zufallszahl_pc == 1){
+            // PC Ergebnis wird weiter gezählt und erhöht
+            wuerfelErgebnisComp += zahlNull; // z.B. 0 + 0
+            console.log(zahlNull)
+            console.log(wuerfelErgebnisComp);
+            wuerfelErgebnisComp___text.innerHTML = wuerfelErgebnisComp;
+            // ??? Farben ??
+            // !!! Button ändern
+            button_0.classList.add = "js___rotVerloren";
+
+            wuerfeErgebnis_Text.innerHTML = `Comp Gewinnt`
+
+            }
+            // wuerfeErgebnis_Text.innerHTML = `Unentschieden Zufallszahl ist gleich`
+
+            // Runde wird um 1 erhöht
+            rundenZahl_Ist += 1;
+            rundenZahl_Ist___text.innerHTML = rundenZahl_Ist;
 
 
 
-}
+    } else {
+        wuerfeErgebnis_Text.innerHTML = `neues Spiel ? Dann drück  <br> unten reset `
+    }
 
 };
 
@@ -124,6 +191,6 @@ if (zufallszahl_pc == zahl_user == Number(button_0.value)) {
 function reseteAlleVariablen() {
     console.log("reseteAlleVariablen geht in function reseteAlleVar")
 
-
+}
 
 };

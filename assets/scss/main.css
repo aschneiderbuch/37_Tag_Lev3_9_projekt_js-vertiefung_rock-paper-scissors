@@ -7,6 +7,11 @@
   display: flex;
 }
 
+.js___rotVerloren {
+  background-color: red;
+  transform: 1s ease-in-out;
+}
+
 h1 {
   color: green;
 }
