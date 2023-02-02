@@ -42,4 +42,55 @@ button_reset.addEventListener("click", reseteAlleVariablen);
 
 
 
-// 
+// Funktionen   rundenVergleich
+function rundenVergleich(event) {
+    event.preventDefault();        // verhindert neu laden der Seite, so wie im html onsubmit="return false"
+    console.log("radio geht in function rundenVergleich");
+
+    if (radio_rundenZahl_05.checked) {
+        ausblenden.style.display = "none";
+        einblenden.style.display = "flex";
+        wuerfelnVergleich();
+    }
+    else if (radio_rundenZahl_10.checked) {
+        ausblenden.style.display = "none";
+        einblenden.style.display = "flex";
+        wuerfelnVergleich();
+    }
+    else if (radio_rundenZahl_15.checked) {
+        ausblenden.style.display = "none";
+        einblenden.style.display = "flex";
+        wuerfelnVergleich();
+    }
+    else if (radio_rundenZahl_20.checked) {
+        ausblenden.style.display = "none";
+        einblenden.style.display = "flex";
+        wuerfelnVergleich();
+    }
+};
+
+
+
+
+
+// Funktion    wuerfelnVergleich
+function wuerfelnVergleich() {
+    console.log("wuerfel geht in function wuerfelnVergleich");
+
+
+
+};
+
+
+
+
+
+
+// Funktion    reseteAlleVariablen
+//    :-) dürfte nicht gehen, da seite im html hart neu geladen wird ;-)
+function reseteAlleVariablen() {
+    console.log("reseteAlleVariablen geht in function reseteAlleVar")
+
+
+
+};
