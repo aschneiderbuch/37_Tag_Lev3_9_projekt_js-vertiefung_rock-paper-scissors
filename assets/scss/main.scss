@@ -1,3 +1,10 @@
+.js___ausblenden{
+    display: none;
+}
+.js___einblenden{
+    display: flex;
+}
+
 h1{
     color: green;
 }
@@ -11,3 +18,10 @@ h1{
     }
     
 }
+
+/* 
+muss später default ausgeblendet sein
+
+.einblenden{
+    display: none;
+} */

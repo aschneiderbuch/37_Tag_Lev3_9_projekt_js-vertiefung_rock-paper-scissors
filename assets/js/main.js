@@ -63,8 +63,8 @@ function rundenVergleich(event) {
         wuerfelnVergleich();
     }
     else if (radio_rundenZahl_20.checked) {
-        ausblenden.style.display = "none";
-        einblenden.style.display = "flex";
+        ausblenden.classList.add("js___ausblenden");
+        einblenden.classList.add("jas___einblenden");
         wuerfelnVergleich();
     }
 };
