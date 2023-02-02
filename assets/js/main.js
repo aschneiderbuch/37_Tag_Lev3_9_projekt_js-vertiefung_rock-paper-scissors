@@ -1,5 +1,24 @@
 console.log("test");
 
+        /* 
+        0 = Stein
+        1 = Papier
+        2 = Schere
+              
+               = Gewinner
+                             0 : 0  = Unentschieden
+                           0 : 1 = 1 Papier
+                             0 : 2 = 0 Stein
+                              1 : 0 = 1 Papier
+                            1 : 2 = 2 Schere
+                             1 : 1 = Unentschieden
+                             2 : 0 = 0 Stein
+                            2 : 1 = 2 Schere
+                             2 : 2 = Unentschieden
+        
+         */
+
+
 // Variablen
 
 let ausblenden = document.querySelector(".ausblenden");
@@ -89,7 +108,7 @@ function rundenVergleich(event) {
 
 
 
-// Funktion    wuerfelnVergleich
+// Funktion    wuerfelnVergleich 0
 function wuerfelnVergleich_0() {
     if (rundenZahl_Ist < rundenZahl_Soll) {
 
@@ -101,24 +120,11 @@ function wuerfelnVergleich_0() {
         zahl_user = Number(button_0.value);             // !!! Button umstellen  0 = Zahl 
 
         // Button farben zurück setzen
-        /// ??? 
-        /* 
-        0 = Stein
-        1 = Papier
-        2 = Schere
-              
-               = Gewinner
-                             0 : 0  = Unentschieden
-                           0 : 1 = 1 Papier
-                             0 : 2 = 0 Stein
-                              1 : 0 = 1 Papier
-                            1 : 2 = 2 Schere
-                             1 : 1 = Unentschieden
-                             2 : 0 = 0 Stein
-                            2 : 1 = 2 Schere
-                             2 : 2 = Unentschieden
-        
-         */
+        button_0.classList.remove("js___gruenGewonnen")                    // !!! Button ändern
+        button_0.classList.remove("js___rotVerloren");                        // !!! Button ändern
+
+
+
 
         // If Vergleich,     = Ausgabe = verschiedene Erhöhungen
         //0:0 1:1 2:2 Unentschieden
@@ -154,17 +160,6 @@ function wuerfelnVergleich_0() {
 
 
             }
-            else if (zufallszahl_pc == 1) {              // !!! 1 = Zahl
-                // PC Ergebnis wird weiter gezählt und erhöht
-                wuerfelErgebnisComp += zahlNull; // z.B. 0 + 0
-                console.log(zahlNull)
-                console.log(wuerfelErgebnisComp);
-                wuerfelErgebnisComp___text.innerHTML = wuerfelErgebnisComp;
-                button_0.classList.add("js___rotVerloren");                        // !!! Button ändern
-                wuerfeErgebnis_Text.innerHTML = `Comp Gewinnt`
-
-            }
-            // wuerfeErgebnis_Text.innerHTML = `Unentschieden Zufallszahl ist gleich`
 
             // Runde wird um 1 erhöht
             rundenZahl_Ist += 1;
@@ -177,15 +172,7 @@ function wuerfelnVergleich_0() {
         } else if (zufallszahl_pc === 1 && zahl_user === 0) {
             const zahlNull = 1;                       // !!! 1 = Zahl
 
-            if (zahl_user == 1) {                    // !!! 1 = Zahl 
-                // User Ergebnis wird weiter gezählt und erhöht
-                wuerfelErgebnisUser += zahlNull; // z.B. 0 + 0 
-                wuerfelErgebnisUser___text.innerHTML = wuerfelErgebnisUser;
-                button_0.classList.add("js___gruenGewonnen")                    // !!! Button ändern
-                wuerfeErgebnis_Text.innerHTML = `User Gewinnt`
-
-            }
-            else if (zufallszahl_pc == 1) {              // !!! 1 = Zahl
+            if (zufallszahl_pc == 1) {              // !!! 1 = Zahl
                 // PC Ergebnis wird weiter gezählt und erhöht
                 wuerfelErgebnisComp += zahlNull; // z.B. 0 + 0
                 console.log(zahlNull)
@@ -196,7 +183,6 @@ function wuerfelnVergleich_0() {
 
 
             }
-            // wuerfeErgebnis_Text.innerHTML = `Unentschieden Zufallszahl ist gleich`
 
             // Runde wird um 1 erhöht
             rundenZahl_Ist += 1;
@@ -215,18 +201,6 @@ function wuerfelnVergleich_0() {
                 wuerfeErgebnis_Text.innerHTML = `User Gewinnt`
 
             }
-            else if (zufallszahl_pc == 0) {              // !!! 1 = Zahl
-                // PC Ergebnis wird weiter gezählt und erhöht
-                wuerfelErgebnisComp += zahlNull; // z.B. 0 + 0
-                console.log(zahlNull)
-                console.log(wuerfelErgebnisComp);
-                wuerfelErgebnisComp___text.innerHTML = wuerfelErgebnisComp;
-                button_0.classList.add("js___rotVerloren");                        // !!! Button ändern
-                wuerfeErgebnis_Text.innerHTML = `Comp Gewinnt`
-
-
-            }
-            // wuerfeErgebnis_Text.innerHTML = `Unentschieden Zufallszahl ist gleich`
 
             // Runde wird um 1 erhöht
             rundenZahl_Ist += 1;
@@ -246,18 +220,6 @@ function wuerfelnVergleich_0() {
 
 
             }
-            else if (zufallszahl_pc == 0) {              // !!! 1 = Zahl
-                // PC Ergebnis wird weiter gezählt und erhöht
-                wuerfelErgebnisComp += zahlNull; // z.B. 0 + 0
-                console.log(zahlNull)
-                console.log(wuerfelErgebnisComp);
-                wuerfelErgebnisComp___text.innerHTML = wuerfelErgebnisComp;
-                button_0.classList.add("js___rotVerloren");                        // !!! Button ändern
-                wuerfeErgebnis_Text.innerHTML = `Comp Gewinnt`
-
-            }
-            // wuerfeErgebnis_Text.innerHTML = `Unentschieden Zufallszahl ist gleich`
-
             // Runde wird um 1 erhöht
             rundenZahl_Ist += 1;
             rundenZahl_Ist___text.innerHTML = rundenZahl_Ist;
@@ -267,15 +229,7 @@ function wuerfelnVergleich_0() {
         } else if (zufallszahl_pc === 2 && zahl_user === 0) {
             const zahlNull = 1;                       // !!! 1 = Zahl
 
-            if (zahl_user == 2) {                    // !!! 1 = Zahl 
-                // User Ergebnis wird weiter gezählt und erhöht
-                wuerfelErgebnisUser += zahlNull; // z.B. 0 + 0 
-                wuerfelErgebnisUser___text.innerHTML = wuerfelErgebnisUser;
-                button_0.classList.add("js___gruenGewonnen")                    // !!! Button ändern
-                wuerfeErgebnis_Text.innerHTML = `User Gewinnt`
-
-            }
-            else if (zufallszahl_pc == 2) {              // !!! 1 = Zahl
+            if (zufallszahl_pc == 2) {              // !!! 1 = Zahl
                 // PC Ergebnis wird weiter gezählt und erhöht
                 wuerfelErgebnisComp += zahlNull; // z.B. 0 + 0
                 console.log(zahlNull)
@@ -286,7 +240,6 @@ function wuerfelnVergleich_0() {
 
 
             }
-            // wuerfeErgebnis_Text.innerHTML = `Unentschieden Zufallszahl ist gleich`
 
             // Runde wird um 1 erhöht
             rundenZahl_Ist += 1;
@@ -297,16 +250,7 @@ function wuerfelnVergleich_0() {
         } else if (zufallszahl_pc === 2 && zahl_user === 0) {
             const zahlNull = 1;                       // !!! 1 = Zahl
 
-            if (zahl_user == 2) {                    // !!! 1 = Zahl 
-                // User Ergebnis wird weiter gezählt und erhöht
-                wuerfelErgebnisUser += zahlNull; // z.B. 0 + 0 
-                wuerfelErgebnisUser___text.innerHTML = wuerfelErgebnisUser;
-                button_0.classList.add("js___gruenGewonnen")                    // !!! Button ändern
-                wuerfeErgebnis_Text.innerHTML = `User Gewinnt`
-
-
-            }
-            else if (zufallszahl_pc == 2) {              // !!! 1 = Zahl
+            if (zufallszahl_pc == 2) {              // !!! 1 = Zahl
                 // PC Ergebnis wird weiter gezählt und erhöht
                 wuerfelErgebnisComp += zahlNull; // z.B. 0 + 0
                 console.log(zahlNull)
@@ -316,7 +260,6 @@ function wuerfelnVergleich_0() {
                 wuerfeErgebnis_Text.innerHTML = `Comp Gewinnt`
 
             }
-            // wuerfeErgebnis_Text.innerHTML = `Unentschieden Zufallszahl ist gleich`
 
             // Runde wird um 1 erhöht
             rundenZahl_Ist += 1;
@@ -325,16 +268,350 @@ function wuerfelnVergleich_0() {
 
 
 
-        } else {
-            wuerfeErgebnis_Text.innerHTML = `neues Spiel ? Dann drück  <br> unten reset `
-        }
+        } 
 
-    };
+    }
+    else {
+        wuerfeErgebnis_Text.innerHTML = `neues Spiel ? Dann drück  <br> unten reset `
+
+    }
 }
 
+// Funktion    wuerfelnVergleich 1
 function wuerfelnVergleich_1() {
+    if (rundenZahl_Ist < rundenZahl_Soll) {
+
+        // Zufalszahl für PC zwischen 0 und 2 erstellen
+        let zufallszahl_pc = Math.round((Math.random() * (2 - 0) + 0));
+        console.log(zufallszahl_pc);  // pc = zufall 0 - 2 
+
+        // User Zahl über den Button holen
+        zahl_user = Number(button_1.value);             // !!! Button umstellen  0 = Zahl 
+
+        // Button farben zurück setzen
+        button_1.classList.remove("js___gruenGewonnen")                    // !!! Button ändern
+        button_1.classList.remove("js___rotVerloren");                        // !!! Button ändern
+
+
+
+
+        // If Vergleich,     = Ausgabe = verschiedene Erhöhungen
+        //0:0 1:1 2:2 Unentschieden
+        if (zufallszahl_pc === zahl_user) {
+            const zahlNull = 0;                       // !!!   0 = Zahl
+            console.log("zufallszahl gleich")
+
+            // User Ergebnis wird weiter gezählt und erhöht
+            wuerfelErgebnisUser += zahlNull; // z.B. 0 + 0 
+            wuerfelErgebnisUser___text.innerHTML = wuerfelErgebnisUser;
+
+            // PC Ergebnis wird weiter gezählt und erhöht
+            wuerfelErgebnisComp += zahlNull; // z.B. 0 + 0
+            wuerfelErgebnisComp___text.innerHTML = wuerfelErgebnisComp;
+
+            wuerfeErgebnis_Text.innerHTML = `Unentschieden Zufallszahl ist gleich`
+
+            // Runde wird um 1 erhöht
+            rundenZahl_Ist += 1;
+            rundenZahl_Ist___text.innerHTML = rundenZahl_Ist;
+
+
+            //0:1 Gewinner hier: 1  Papier //     0 = Stein 1 = Papier 2 = Schere     
+        } else if (zufallszahl_pc === 0 && zahl_user === 1) {
+            const zahlNull = 1;                       // !!! 1 = Zahl
+
+            if (zahl_user == 1) {                    // !!! 1 = Zahl 
+                // User Ergebnis wird weiter gezählt und erhöht
+                wuerfelErgebnisUser += zahlNull; // z.B. 0 + 0 
+                wuerfelErgebnisUser___text.innerHTML = wuerfelErgebnisUser;
+                button_1.classList.add("js___gruenGewonnen")                    // !!! Button ändern
+                wuerfeErgebnis_Text.innerHTML = `User Gewinnt`
+
+
+            }
+
+            // Runde wird um 1 erhöht
+            rundenZahl_Ist += 1;
+            rundenZahl_Ist___text.innerHTML = rundenZahl_Ist;
+
+
+
+
+            //1:0 Gewinner hier: 1  Papier //     0 = Stein 1 = Papier 2 = Schere     
+        } else if (zufallszahl_pc === 1 && zahl_user === 0) {
+            const zahlNull = 1;                       // !!! 1 = Zahl
+
+            if (zufallszahl_pc == 1) {              // !!! 1 = Zahl
+                // PC Ergebnis wird weiter gezählt und erhöht
+                wuerfelErgebnisComp += zahlNull; // z.B. 0 + 0
+                console.log(zahlNull)
+                console.log(wuerfelErgebnisComp);
+                wuerfelErgebnisComp___text.innerHTML = wuerfelErgebnisComp;
+                button_1.classList.add("js___rotVerloren");                        // !!! Button ändern
+                wuerfeErgebnis_Text.innerHTML = `Comp Gewinnt`
+
+
+            }
+
+            // Runde wird um 1 erhöht
+            rundenZahl_Ist += 1;
+            rundenZahl_Ist___text.innerHTML = rundenZahl_Ist;
+
+
+            //0:2 Gewinner hier: 0  Stein //     0 = Stein 1 = Papier 2 = Schere     
+        } else if (zufallszahl_pc === 0 && zahl_user === 2) {
+            const zahlNull = 1;                       // !!! 1 = Zahl
+
+            if (zahl_user == 0) {                    // !!! 1 = Zahl 
+                // User Ergebnis wird weiter gezählt und erhöht
+                wuerfelErgebnisUser += zahlNull; // z.B. 0 + 0 
+                wuerfelErgebnisUser___text.innerHTML = wuerfelErgebnisUser;
+                button_1.classList.add("js___gruenGewonnen")                    // !!! Button ändern
+                wuerfeErgebnis_Text.innerHTML = `User Gewinnt`
+
+            }
+
+            // Runde wird um 1 erhöht
+            rundenZahl_Ist += 1;
+            rundenZahl_Ist___text.innerHTML = rundenZahl_Ist;
+
+
+            //2:0 Gewinner hier: 0 Stein //     0 = Stein 1 = Papier 2 = Schere     
+        } else if (zufallszahl_pc === 2 && zahl_user === 0) {
+            const zahlNull = 1;                       // !!! 1 = Zahl
+
+            if (zahl_user == 0) {                    // !!! 1 = Zahl 
+                // User Ergebnis wird weiter gezählt und erhöht
+                wuerfelErgebnisUser += zahlNull; // z.B. 0 + 0 
+                wuerfelErgebnisUser___text.innerHTML = wuerfelErgebnisUser;
+                button_1.classList.add("js___gruenGewonnen")                    // !!! Button ändern
+                wuerfeErgebnis_Text.innerHTML = `User Gewinnt`
+
+
+            }
+            // Runde wird um 1 erhöht
+            rundenZahl_Ist += 1;
+            rundenZahl_Ist___text.innerHTML = rundenZahl_Ist;
+
+
+            //1:2 Gewinner hier: 2 Schere //     0 = Stein 1 = Papier 2 = Schere     
+        } else if (zufallszahl_pc === 2 && zahl_user === 0) {
+            const zahlNull = 1;                       // !!! 1 = Zahl
+
+            if (zufallszahl_pc == 2) {              // !!! 1 = Zahl
+                // PC Ergebnis wird weiter gezählt und erhöht
+                wuerfelErgebnisComp += zahlNull; // z.B. 0 + 0
+                console.log(zahlNull)
+                console.log(wuerfelErgebnisComp);
+                wuerfelErgebnisComp___text.innerHTML = wuerfelErgebnisComp;
+                button_1.classList.add("js___rotVerloren");                        // !!! Button ändern
+                wuerfeErgebnis_Text.innerHTML = `Comp Gewinnt`
+
+
+            }
+
+            // Runde wird um 1 erhöht
+            rundenZahl_Ist += 1;
+            rundenZahl_Ist___text.innerHTML = rundenZahl_Ist;
+
+
+            //2:1 Gewinner hier: 2 Schere //     0 = Stein 1 = Papier 2 = Schere     
+        } else if (zufallszahl_pc === 2 && zahl_user === 0) {
+            const zahlNull = 1;                       // !!! 1 = Zahl
+
+            if (zufallszahl_pc == 2) {              // !!! 1 = Zahl
+                // PC Ergebnis wird weiter gezählt und erhöht
+                wuerfelErgebnisComp += zahlNull; // z.B. 0 + 0
+                console.log(zahlNull)
+                console.log(wuerfelErgebnisComp);
+                wuerfelErgebnisComp___text.innerHTML = wuerfelErgebnisComp;
+                button_1.classList.add("js___rotVerloren");                        // !!! Button ändern
+                wuerfeErgebnis_Text.innerHTML = `Comp Gewinnt`
+
+            }
+
+            // Runde wird um 1 erhöht
+            rundenZahl_Ist += 1;
+            rundenZahl_Ist___text.innerHTML = rundenZahl_Ist;
+
+
+
+
+        } 
+
+    }
+    else {
+        wuerfeErgebnis_Text.innerHTML = `neues Spiel ? Dann drück  <br> unten reset `
+
+    }
 }
+// Funktion    wuerfelnVergleich 2
 function wuerfelnVergleich_2() {
+    if (rundenZahl_Ist < rundenZahl_Soll) {
+
+        // Zufalszahl für PC zwischen 0 und 2 erstellen
+        let zufallszahl_pc = Math.round((Math.random() * (2 - 0) + 0));
+        console.log(zufallszahl_pc);  // pc = zufall 0 - 2 
+
+        // User Zahl über den Button holen
+        zahl_user = Number(button_0.value);             // !!! Button umstellen  0 = Zahl 
+
+        // Button farben zurück setzen
+        button_2.classList.remove("js___gruenGewonnen")                    // !!! Button ändern
+        button_2.classList.remove("js___rotVerloren");                        // !!! Button ändern
+
+
+
+
+        // If Vergleich,     = Ausgabe = verschiedene Erhöhungen
+        //0:0 1:1 2:2 Unentschieden
+        if (zufallszahl_pc === zahl_user) {
+            const zahlNull = 0;                       // !!!   0 = Zahl
+            console.log("zufallszahl gleich")
+
+            // User Ergebnis wird weiter gezählt und erhöht
+            wuerfelErgebnisUser += zahlNull; // z.B. 0 + 0 
+            wuerfelErgebnisUser___text.innerHTML = wuerfelErgebnisUser;
+
+            // PC Ergebnis wird weiter gezählt und erhöht
+            wuerfelErgebnisComp += zahlNull; // z.B. 0 + 0
+            wuerfelErgebnisComp___text.innerHTML = wuerfelErgebnisComp;
+
+            wuerfeErgebnis_Text.innerHTML = `Unentschieden Zufallszahl ist gleich`
+
+            // Runde wird um 1 erhöht
+            rundenZahl_Ist += 1;
+            rundenZahl_Ist___text.innerHTML = rundenZahl_Ist;
+
+
+            //0:1 Gewinner hier: 1  Papier //     0 = Stein 1 = Papier 2 = Schere     
+        } else if (zufallszahl_pc === 0 && zahl_user === 1) {
+            const zahlNull = 1;                       // !!! 1 = Zahl
+
+            if (zahl_user == 1) {                    // !!! 1 = Zahl 
+                // User Ergebnis wird weiter gezählt und erhöht
+                wuerfelErgebnisUser += zahlNull; // z.B. 0 + 0 
+                wuerfelErgebnisUser___text.innerHTML = wuerfelErgebnisUser;
+                button_2.classList.add("js___gruenGewonnen")                    // !!! Button ändern
+                wuerfeErgebnis_Text.innerHTML = `User Gewinnt`
+
+
+            }
+
+            // Runde wird um 1 erhöht
+            rundenZahl_Ist += 1;
+            rundenZahl_Ist___text.innerHTML = rundenZahl_Ist;
+
+
+
+
+            //1:0 Gewinner hier: 1  Papier //     0 = Stein 1 = Papier 2 = Schere     
+        } else if (zufallszahl_pc === 1 && zahl_user === 0) {
+            const zahlNull = 1;                       // !!! 1 = Zahl
+
+            if (zufallszahl_pc == 1) {              // !!! 1 = Zahl
+                // PC Ergebnis wird weiter gezählt und erhöht
+                wuerfelErgebnisComp += zahlNull; // z.B. 0 + 0
+                console.log(zahlNull)
+                console.log(wuerfelErgebnisComp);
+                wuerfelErgebnisComp___text.innerHTML = wuerfelErgebnisComp;
+                button_2.classList.add("js___rotVerloren");                        // !!! Button ändern
+                wuerfeErgebnis_Text.innerHTML = `Comp Gewinnt`
+
+
+            }
+
+            // Runde wird um 1 erhöht
+            rundenZahl_Ist += 1;
+            rundenZahl_Ist___text.innerHTML = rundenZahl_Ist;
+
+
+            //0:2 Gewinner hier: 0  Stein //     0 = Stein 1 = Papier 2 = Schere     
+        } else if (zufallszahl_pc === 0 && zahl_user === 2) {
+            const zahlNull = 1;                       // !!! 1 = Zahl
+
+            if (zahl_user == 0) {                    // !!! 1 = Zahl 
+                // User Ergebnis wird weiter gezählt und erhöht
+                wuerfelErgebnisUser += zahlNull; // z.B. 0 + 0 
+                wuerfelErgebnisUser___text.innerHTML = wuerfelErgebnisUser;
+                button_2.classList.add("js___gruenGewonnen")                    // !!! Button ändern
+                wuerfeErgebnis_Text.innerHTML = `User Gewinnt`
+
+            }
+
+            // Runde wird um 1 erhöht
+            rundenZahl_Ist += 1;
+            rundenZahl_Ist___text.innerHTML = rundenZahl_Ist;
+
+
+            //2:0 Gewinner hier: 0 Stein //     0 = Stein 1 = Papier 2 = Schere     
+        } else if (zufallszahl_pc === 2 && zahl_user === 0) {
+            const zahlNull = 1;                       // !!! 1 = Zahl
+
+            if (zahl_user == 0) {                    // !!! 1 = Zahl 
+                // User Ergebnis wird weiter gezählt und erhöht
+                wuerfelErgebnisUser += zahlNull; // z.B. 0 + 0 
+                wuerfelErgebnisUser___text.innerHTML = wuerfelErgebnisUser;
+                button_2.classList.add("js___gruenGewonnen")                    // !!! Button ändern
+                wuerfeErgebnis_Text.innerHTML = `User Gewinnt`
+
+
+            }
+            // Runde wird um 1 erhöht
+            rundenZahl_Ist += 1;
+            rundenZahl_Ist___text.innerHTML = rundenZahl_Ist;
+
+
+            //1:2 Gewinner hier: 2 Schere //     0 = Stein 1 = Papier 2 = Schere     
+        } else if (zufallszahl_pc === 2 && zahl_user === 0) {
+            const zahlNull = 1;                       // !!! 1 = Zahl
+
+            if (zufallszahl_pc == 2) {              // !!! 1 = Zahl
+                // PC Ergebnis wird weiter gezählt und erhöht
+                wuerfelErgebnisComp += zahlNull; // z.B. 0 + 0
+                console.log(zahlNull)
+                console.log(wuerfelErgebnisComp);
+                wuerfelErgebnisComp___text.innerHTML = wuerfelErgebnisComp;
+                button_2.classList.add("js___rotVerloren");                        // !!! Button ändern
+                wuerfeErgebnis_Text.innerHTML = `Comp Gewinnt`
+
+
+            }
+
+            // Runde wird um 1 erhöht
+            rundenZahl_Ist += 1;
+            rundenZahl_Ist___text.innerHTML = rundenZahl_Ist;
+
+
+            //2:1 Gewinner hier: 2 Schere //     0 = Stein 1 = Papier 2 = Schere     
+        } else if (zufallszahl_pc === 2 && zahl_user === 0) {
+            const zahlNull = 1;                       // !!! 1 = Zahl
+
+            if (zufallszahl_pc == 2) {              // !!! 1 = Zahl
+                // PC Ergebnis wird weiter gezählt und erhöht
+                wuerfelErgebnisComp += zahlNull; // z.B. 0 + 0
+                console.log(zahlNull)
+                console.log(wuerfelErgebnisComp);
+                wuerfelErgebnisComp___text.innerHTML = wuerfelErgebnisComp;
+                button_2.classList.add("js___rotVerloren");                        // !!! Button ändern
+                wuerfeErgebnis_Text.innerHTML = `Comp Gewinnt`
+
+            }
+
+            // Runde wird um 1 erhöht
+            rundenZahl_Ist += 1;
+            rundenZahl_Ist___text.innerHTML = rundenZahl_Ist;
+
+
+
+
+        } 
+
+    }
+    else {
+        wuerfeErgebnis_Text.innerHTML = `neues Spiel ? Dann drück  <br> unten reset `
+
+    }
 }
 
 
