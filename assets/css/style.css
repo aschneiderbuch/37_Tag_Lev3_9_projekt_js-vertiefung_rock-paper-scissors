@@ -9,7 +9,7 @@
 
 .js___rotVerloren {
   background-color: rgb(239, 239, 239);
-  animation: verloren 1s ease-in-out;
+  animation: verloren 0.1s ease-in-out;
 }
 @keyframes verloren {
   from {
@@ -25,7 +25,7 @@
 
 .js___gruenGewonnen {
   background-color: rgb(239, 239, 239);
-  animation: gewonnen 1s ease-in-out;
+  animation: gewonnen 0.1s ease-in-out;
 }
 @keyframes gewonnen {
   from {
