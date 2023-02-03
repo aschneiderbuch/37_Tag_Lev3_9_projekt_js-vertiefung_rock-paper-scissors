@@ -144,7 +144,11 @@ function wuerfelnVergleich_0() {
 
         // Button farben zurück setzen
         button.classList.remove("js___gruenGewonnen","js___rotVerloren")                    // !!! Button ändern
-       button.classList.remove("js___rotVerloren","js___gruenGewonnen");                        // !!! Button ändern
+button.classList.add("js___neutralDefault")
+button_0.classList.add("js___neutralDefault")
+button_1.classList.add("js___neutralDefault")
+button_2.classList.add("js___neutralDefault")  // !!! ??? wieso wechseln die classListen 
+                                        // !!! ??? nur beim wechsel von Gewinner und Velierer
 
 
 
@@ -182,6 +186,7 @@ function wuerfelnVergleich_0() {
             wuerfelErgebnisUser___text.innerHTML = wuerfelErgebnisUser;
             button.classList.toggle("js___gruenGewonnen")                    // !!! Button ändern
             wuerfeErgebnis_Text.innerHTML = `User Gewinnt`
+            setTimeout(() => {button.classList.add("js___neutralDefault")}, 1000);
 
 
             // }
@@ -195,6 +200,7 @@ function wuerfelnVergleich_0() {
         wuerfelErgebnisComp___text.innerHTML = wuerfelErgebnisComp;
         button.classList.toggle("js___rotVerloren");                        // !!! Button ändern
         wuerfeErgebnis_Text.innerHTML = `Comp Gewinnt`
+        setTimeout(() => {button.classList.add("js___neutralDefault")}, 1000);
 
         // Runde wird um 1 erhöht
         rundenZahl_Ist ++; //1;
