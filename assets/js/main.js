@@ -25,7 +25,7 @@ let ausblenden = document.querySelector(".ausblenden");
 // ausblenden.style.display = "none";
 let einblenden = document.querySelector(".einblenden");
 
-let radio_rundenZahl_05 = document.querySelector("#radio_rundenZahl_05");
+let radio_rundenZahl_05 = document.querySelector(`input[name=rundenZahl]`);
 let radio_rundenZahl_10 = document.querySelector("#radio_rundenZahl_10");
 let radio_rundenZahl_15 = document.querySelector("#radio_rundenZahl_15");
 let radio_rundenZahl_20 = document.querySelector("#radio_rundenZahl_20");
@@ -47,7 +47,7 @@ let button_0 = document.querySelector("#button_0");
 let button_1 = document.querySelector("#button_1");
 let button_2 = document.querySelector("#button_2");
 
-// ist ein array []
+// ist ein array [0,1,2]
 let button_all = document.querySelectorAll(".button_all");
 console.log(button_all);
 
@@ -145,9 +145,9 @@ function wuerfelnVergleich_0() {
         // Button farben zurück setzen
         button.classList.remove("js___gruenGewonnen","js___rotVerloren")                    // !!! Button ändern
 button.classList.add("js___neutralDefault")
-button_0.classList.add("js___neutralDefault")
-button_1.classList.add("js___neutralDefault")
-button_2.classList.add("js___neutralDefault")  // !!! ??? wieso wechseln die classListen 
+button_0.className = "";
+button_1.className = "";
+button_2.className = "";  // !!! ??? wieso wechseln die classListen 
                                         // !!! ??? nur beim wechsel von Gewinner und Velierer
 
 
