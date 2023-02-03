@@ -74,8 +74,12 @@ function rundenVergleich(event) {
     console.log("radio geht in function rundenVergleich");
 
     if (radio_rundenZahl_05.checked) {
+
+        setTimeout(() =>{                           // wartet 1000 ms bis Display weg
         ausblenden.style.display = "none";
         einblenden.style.display = "flex";
+        }, 1000);
+
         const zahl5 = Number(radio_rundenZahl_05.value); // Zahl 5
         rundenZahl_Soll = zahl5;
         rundenZahl_Soll___text.innerHTML = zahl5;
@@ -494,7 +498,6 @@ function wuerfelnVergleich_2() {
                 wuerfelErgebnisUser___text.innerHTML = wuerfelErgebnisUser;
                 button_2.classList.add("js___gruenGewonnen")                    // !!! Button ändern
                 wuerfeErgebnis_Text.innerHTML = `User Gewinnt`
-
 
             }
 
